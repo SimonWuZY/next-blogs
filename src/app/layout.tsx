@@ -33,7 +33,7 @@ export default function RootLayout({
         <Header />
         <div className="flex-grow p-4 sm:p-6 lg:p-8">
           <div className="container mx-auto">
-            <div className="bg-white rounded-lg shadow-md p-6 ">
+            <div className="bg-white">
               {children}
             </div>
           </div>
