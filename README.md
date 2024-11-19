@@ -1,0 +1,2 @@
+# NextBlogs
+Based on nextjs 
