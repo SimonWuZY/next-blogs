@@ -17,13 +17,16 @@ export default function Header() {
               </div>
               <nav className="hidden md:ml-6 md:flex md:space-x-8">
                 <Link href="/" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
-                  Home
+                  主页
                 </Link>
                 <Link href="/about" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                  About
+                  产品
                 </Link>
                 <Link href="/contact" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                  Contact
+                  文档
+                </Link>
+                <Link href="/account" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
+                  账号
                 </Link>
               </nav>
               <div className="flex items-center md:hidden">
