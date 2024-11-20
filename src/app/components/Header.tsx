@@ -1,10 +1,30 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation' // 使用 next/navigation 的 usePathname 钩子
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname() // 获取当前路径
+
+  const navLinks = [
+    { href: '/', label: '主页' },
+    { href: '/products', label: '产品' },
+    { href: '/document', label: '文档' },
+    { href: '/account', label: '账号' },
+  ];
+
+  // 根据当前路径返回导航链接的样式
+  const getNavClass = (path: string) =>
+    path === pathname
+      ? 'inline-flex items-center px-1 pt-1 text-sm font-medium text-red-900 font-bold'
+      : 'inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900';
+
+  const getMobileNavClass = (path: string) =>
+    path === pathname
+      ? 'block px-3 py-2 rounded-md text-base font-medium text-red-900 font-bold'
+      : 'block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50';
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
@@ -16,18 +36,11 @@ export default function Header() {
             </Link>
           </div>
           <nav className="hidden md:ml-6 md:flex md:space-x-8">
-            <Link href="/" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
-              主页
-            </Link>
-            <Link href="/products" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-              产品
-            </Link>
-            <Link href="/document" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-              文档
-            </Link>
-            <Link href="/account" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-              账号
-            </Link>
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={getNavClass(href)}>
+                {label}
+              </Link>
+            ))}
           </nav>
           <div className="flex items-center md:hidden">
             <button
@@ -48,21 +61,14 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-gray-500 hover:bg-gray-50">
-              主页
-            </Link>
-            <Link href="/#products" className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
-              产品
-            </Link>
-            <Link href="/document" className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
-              文档
-            </Link>
-            <Link href="/account" className="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
-              账号
-            </Link>
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className={getMobileNavClass(href)}>
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
     </header>
-  )
+  );
 }
