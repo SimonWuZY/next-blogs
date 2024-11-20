@@ -25,11 +25,12 @@ export default function HomePage() {
   ]
 
   return (
-    <main className="bg-gradient-to-br">
+    <main className="bg-gradient-to-br ">
       <div className='flex flex-col justify-center items-center min-h-screen text-black'>
         <div className='mt-1 font-extrabold text-[82px]'>
           这是一个科研学习好助手
         </div>
+
         <div className='my-10 font-serif text-[24px]'>
           xxxx 将根据您的具体需求和工作环境提供最佳的定制服务，包括科研信息检索、日程安排、情绪价值等
         </div>
@@ -38,24 +39,25 @@ export default function HomePage() {
             rounded-lg transition duration-300 ease-in-out 
             transform hover:bg-blue-400 hover:scale-105
             mt-3 mx-8'>
-            蓝色按钮
+            快速开始
           </button>
           <button className='px-6 py-2 text-blue-500 bg-white border w-[180px]
             rounded-lg transition duration-300 ease-in-out
             transform hover:bg-gray-300 hover:text-white hover:scale-105
             mt-3 mx-8'>
-            白色按钮
+            演示视频
           </button>
         </div>
       </div>
 
       <div className='flex flex-col justify-center items-center min-h-screen text-black'>
         <div className='mt-1 font-extrabold text-[52px]'>
-          微调 prompt 检索增强 RAG
+          <span className="text-blue-700">微调 prompt</span> <span className="text-purple-700">检索增强 RAG</span>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className='w-1/2 h-1 bg-gradient-to-r from-blue-300 to-purple-300 mt-4'></div>
+        <div className="max-w-7xl mx-auto px-4 py-16 ">
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-blue-100 border-none">
+            <Card className="bg-blue-200 border-none">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
@@ -80,9 +82,9 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-purple-100 border-none">
+            <Card className="bg-purple-200 border-none">
               <CardContent className="p-6">
-                <div className="flex flex-col h-full">
+                <div className="flex flex-col h-full ">
                   <div className="mb-6">
                     <div className="flex items-center gap-2 mb-4">
                       <FileText className="w-6 h-6 text-red-500" />
@@ -108,7 +110,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className='flex flex-col justify-center items-center min-h-screen text-black'>
+      <div className=' flex flex-col justify-center items-center min-h-screen text-black'>
         <div className='mt-1 font-extrabold text-[64px]'>
           主要适用业务范围
         </div>
