@@ -57,7 +57,7 @@ export default function HomePage() {
         <div className='w-1/2 h-1 bg-gradient-to-r from-blue-300 to-purple-300 mt-4'></div>
         <div className="max-w-7xl mx-auto px-4 py-16 ">
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-blue-200 border-none">
+            <Card className="bg-blue-300 border-none">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
@@ -82,7 +82,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-purple-200 border-none">
+            <Card className="bg-purple-100 border-none">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full ">
                   <div className="mb-6">

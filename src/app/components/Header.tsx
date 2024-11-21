@@ -10,7 +10,7 @@ export default function Header() {
 
   const navLinks = [
     { href: '/', label: '主页' },
-    { href: '/applications', label: '应用' },
+    { href: '/apps', label: '应用' },
     { href: '/blogs', label: '论坛' },
     { href: '/account', label: '账号' },
   ];
