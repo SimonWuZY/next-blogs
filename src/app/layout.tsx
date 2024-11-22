@@ -13,12 +13,12 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const showFooter = pathname === '/'; // 只在主页面显示
+  const showHeader = pathname === '/' || pathname === '/blogs' || pathname === '/account' || pathname === '/apps';
 
   return (
     <html lang="en">
       <body>
-        
-        <Header />
+        {showHeader && <Header />}
         <div className="flex-grow p-4 sm:p-6 lg:p-8">
           <div className="container mx-auto">
             <div className="bg-white">
