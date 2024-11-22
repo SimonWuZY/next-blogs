@@ -76,7 +76,7 @@ export default function BlogPost() {
       <Button
         variant="ghost"
         className="mb-6 hover:bg-transparent"
-        onClick={() => router.push('/')}
+        onClick={() => router.push('/blogs')}
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back to posts
