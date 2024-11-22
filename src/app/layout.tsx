@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation';
 
 import "./globals.css";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/Headers/Header";
 import Footer from "@/app/components/Footer";
 
 
@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        
         {showHeader && <Header />}
         <div className="flex-grow p-4 sm:p-6 lg:p-8">
           <div className="container mx-auto">

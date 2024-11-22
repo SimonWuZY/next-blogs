@@ -1,0 +1,31 @@
+@keyframes flowingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.flowing-gradient {
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 0.15),
+    rgba(139, 92, 246, 0.15),
+    rgba(236, 72, 153, 0.15));
+  background-size: 200% 100%;
+  animation: flowingGradient 8s ease infinite;
+  height: 20%; /* This makes it occupy 1/5 of the header */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-background {
+  background-color: #f3f4f6; /* Light gray color */
+  position: relative;
+}
+
