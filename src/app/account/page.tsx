@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card"
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card"
 import { Crown, Droplet, MapPin, Wallet } from 'lucide-react'
 
 export default function Account() {

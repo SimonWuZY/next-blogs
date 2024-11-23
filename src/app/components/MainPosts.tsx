@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "./Card"
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card"
 
 export default function HighlightedPosts() {
   const highlightedPosts = [

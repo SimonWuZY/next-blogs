@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/Card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/Card"
 import { useEffect, useState } from "react"
 import Image from 'next/image'
 import Link from 'next/link'

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Card, CardContent } from '@/app/components/Card'
+import { Card, CardContent } from '@/app/components/ui/Card'
 import { Search, Calendar, Smile, Bot, FileText } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import { ReactNode, useRef } from 'react'
