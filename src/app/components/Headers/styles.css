@@ -10,22 +10,27 @@
   }
 }
 
-.flowing-gradient {
-  background: linear-gradient(90deg, 
-    rgba(59, 130, 246, 0.15),
-    rgba(139, 92, 246, 0.15),
-    rgba(236, 72, 153, 0.15));
-  background-size: 200% 100%;
-  animation: flowingGradient 8s ease infinite;
-  height: 20%; /* This makes it occupy 1/5 of the header */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.nav-container {
+  position: relative;
+  background-color: white;
+  border-radius: 9999px;
+  /* overflow: hidden; */
 }
 
-.header-background {
-  background-color: #f3f4f6; /* Light gray color */
-  position: relative;
+.nav-container::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 1),
+    rgba(139, 92, 246, 1),
+    rgba(59, 130, 246, 1));
+  background-size: 200% 100%;
+  animation: flowingGradient 1s ease infinite;
+  border-radius: 9999px;
+  z-index: -1;
 }
 

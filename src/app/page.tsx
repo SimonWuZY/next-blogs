@@ -94,9 +94,9 @@ export default function HomePage() {
             快速开始
           </motion.button>
           <motion.button
-            className='px-6 py-2 text-blue-600 bg-white border border-blue-600 w-[180px]
+            className='px-6 py-2 text-white bg-purple-600 w-[180px]
               rounded-lg transition duration-300 ease-in-out
-              transform hover:bg-blue-50 hover:text-blue-700 hover:scale-105
+              transform hover:bg-purple-500  hover:scale-105
               mt-3 mx-8 shadow-lg'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
