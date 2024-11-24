@@ -8,53 +8,47 @@ import { useParams, useRouter } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import remarkToc from "remark-toc"
-import { Button } from "@/app/components/Button"
+import { Button } from "@/app/components/ui/button"
 
-// This would typically come from your API or CMS
-const getPostContent = (slug: string) => {
-  console.log(`Fetching content for slug: ${slug}`);
-  // Simulated post data - in a real app, fetch this from your API
-  return {
-    title: "Cross-Platform Copywriting with Dify",
-    category: "HOW TO",
-    date: "Sep 14, 2024",
-    authors: [
-      {
-        name: "Evan Chen",
-        role: "Product Manager",
-        avatar: "/placeholder.svg?height=100&width=100"
-      },
-      {
-        name: "Lyson",
-        role: "Dify Contributor",
-        avatar: "/placeholder.svg?height=100&width=100"
-      }
-    ],
-    content: `
-# Cross-Platform Copywriting with Dify
-
-In Dify, not all nodes have a low entry threshold. Some nodes may be overlooked during the process of orchestrating flows, but combining them will unlock more possibilities for Dify in complex tasks...
-
-## Chatflow Overview
-Content for chatflow overview...
-
-## Configure the Starting Node and Conversation Opener
-Content for configuration...
-
-## Using the Jina AI Tool for Web Scraping
-Content for web scraping...
-
-## Cross-platform style rewrite
-Content for style rewrite...
-
-## Extract Other Materials
-Content for materials...
-
-## Summary
-Final thoughts and conclusions...
-    `
-  }
-}
+// Move this to a separate file in a real application
+const posts = [
+    {
+        title: "Enhancing GPT-Researcher",
+        author: "EVAN CHEN",
+        date: "NOV 5, 2024",
+        category: "HOW TO",
+        image: '/placeholder.svg?height=200&width=300',
+        slug: "enhancing-gpt-researcher",
+        content: "Content for Enhancing GPT-Researcher...",
+    },
+    {
+        title: "Dify.AI x TechCrunch",
+        author: "DIFY",
+        date: "NOV 1, 2024",
+        category: "COMPANY",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "dify-ai-x-techcrunch",
+        content: "Content for Dify.AI x TechCrunch...",
+    },
+    {
+        title: "Cross-Platform Copywriting",
+        author: "EVAN CHEN & LYSON",
+        date: "SEP 14, 2024",
+        category: "HOW TO",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "cross-platform-copywriting",
+        content: "Content for Cross-Platform Copywriting...",
+    },
+    {
+        title: "Introducing Workflow",
+        author: "JOSHUA & EVAN CHEN",
+        date: "OCT 21, 2024",
+        category: "RELEASE",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "introducing-workflow",
+        content: "Content for Introducing Workflow...",
+    },
+]
 
 export default function BlogPost() {
   const params = useParams()
@@ -63,8 +57,10 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (params.slug) {
-      const postData = getPostContent(params.slug as string);
-      setPost(postData);
+      const foundPost = posts.find(p => p.slug === params.slug)
+      if (foundPost) {
+        setPost(foundPost)
+      }
     }
   }, [params.slug])
 
@@ -88,25 +84,20 @@ export default function BlogPost() {
       {/* Title */}
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
 
-      {/* Authors */}
+      {/* Author */}
       <div className="flex items-center gap-6 mb-8">
-        {post.authors.map((author: any, index: number) => (
-          <div key={index} className="flex items-center gap-3">
-            <Image
-              src={author.avatar}
-              alt={author.name}
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <div>
-              <div className="font-semibold">{author.name}</div>
-              <div className="text-sm text-gray-600">{author.role}</div>
-            </div>
+        <div className="flex items-center gap-3">
+          <Image
+            src={post.image}
+            alt={post.author}
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <div>
+            <div className="font-semibold">{post.author}</div>
+            <div className="text-sm text-gray-600">{post.date}</div>
           </div>
-        ))}
-        <div className="text-gray-600 ml-auto">
-          Written on {post.date}
         </div>
       </div>
 
@@ -141,12 +132,10 @@ export default function BlogPost() {
           <div className="sticky top-8">
             <h3 className="font-semibold mb-4">ON THIS PAGE</h3>
             <nav className="space-y-2">
-              <a href="#chatflow-overview" className="block text-gray-600 hover:text-gray-900">Chatflow Overview</a>
-              <a href="#configure-the-starting-node-and-conversation-opener" className="block text-gray-600 hover:text-gray-900">Configure the Starting Node</a>
-              <a href="#using-the-jina-ai-tool-for-web-scraping" className="block text-gray-600 hover:text-gray-900">Using the Jina AI Tool</a>
-              <a href="#cross-platform-style-rewrite" className="block text-gray-600 hover:text-gray-900">Cross-platform style rewrite</a>
-              <a href="#extract-other-materials" className="block text-gray-600 hover:text-gray-900">Extract Other Materials</a>
-              <a href="#summary" className="block text-gray-600 hover:text-gray-900">Summary</a>
+              {/* This is a placeholder. In a real application, you'd generate this dynamically based on the content */}
+              <a href="#section-1" className="block text-gray-600 hover:text-gray-900">Section 1</a>
+              <a href="#section-2" className="block text-gray-600 hover:text-gray-900">Section 2</a>
+              <a href="#section-3" className="block text-gray-600 hover:text-gray-900">Section 3</a>
             </nav>
           </div>
         </div>

@@ -8,7 +8,7 @@ const navLinks = [
   { href: '/', label: '首页' },
   { href: '/apps', label: '助理' },
   { href: '/blogs', label: '博客' },
-  { href: '/account', label: '账号' },
+  { href: '/drafts', label: '撰写' },
 ]
 
 export default function Header() {

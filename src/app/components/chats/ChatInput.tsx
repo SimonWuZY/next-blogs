@@ -1,6 +1,6 @@
 import { SetStateAction, useState } from 'react'
 import { Input } from '@/app/components/ui/input'
-import { Button } from '@/app/components/ui/Button'
+import { Button } from '@/app/components/ui/button'
 import { SendIcon } from 'lucide-react'
 
 export default function ChatInput() {

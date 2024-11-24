@@ -1,9 +1,49 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/Card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import { useEffect, useState } from "react"
 import Image from 'next/image'
 import Link from 'next/link'
+
+// Move this to a separate file in a real application
+const posts = [
+    {
+        title: "Enhancing GPT-Researcher",
+        author: "EVAN CHEN",
+        date: "NOV 5, 2024",
+        category: "HOW TO",
+        image: '/placeholder.svg?height=200&width=300',
+        slug: "enhancing-gpt-researcher",
+        content: "Content for Enhancing GPT-Researcher...",
+    },
+    {
+        title: "Dify.AI x TechCrunch",
+        author: "DIFY",
+        date: "NOV 1, 2024",
+        category: "COMPANY",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "dify-ai-x-techcrunch",
+        content: "Content for Dify.AI x TechCrunch...",
+    },
+    {
+        title: "Cross-Platform Copywriting",
+        author: "EVAN CHEN & LYSON",
+        date: "SEP 14, 2024",
+        category: "HOW TO",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "cross-platform-copywriting",
+        content: "Content for Cross-Platform Copywriting...",
+    },
+    {
+        title: "Introducing Workflow",
+        author: "JOSHUA & EVAN CHEN",
+        date: "OCT 21, 2024",
+        category: "RELEASE",
+        image: "/placeholder.svg?height=200&width=300",
+        slug: "introducing-workflow",
+        content: "Content for Introducing Workflow...",
+    },
+]
 
 export default function BlogPosts() {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -11,41 +51,6 @@ export default function BlogPosts() {
     useEffect(() => {
         setIsLoaded(true)
     }, [])
-
-    const posts = [
-        {
-            title: "Enhancing GPT-Researcher",
-            author: "EVAN CHEN",
-            date: "NOV 5, 2024",
-            category: "HOW TO",
-            image: '/placeholder.svg?height=200&width=300',
-            slug: "enhancing-gpt-researcher"
-        },
-        {
-            title: "Dify.AI x TechCrunch",
-            author: "DIFY",
-            date: "NOV 1, 2024",
-            category: "COMPANY",
-            image: "/placeholder.svg?height=200&width=300",
-            slug: "dify-ai-x-techcrunch"
-        },
-        {
-            title: "Cross-Platform Copywriting",
-            author: "EVAN CHEN & LYSON",
-            date: "SEP 14, 2024",
-            category: "HOW TO",
-            image: "/placeholder.svg?height=200&width=300",
-            slug: "cross-platform-copywriting"
-        },
-        {
-            title: "Introducing Workflow",
-            author: "JOSHUA & EVAN CHEN",
-            date: "OCT 21, 2024",
-            category: "RELEASE",
-            image: "/placeholder.svg?height=200&width=300",
-            slug: "introducing-workflow"
-        },
-    ]
 
     return (
         <main className="mt-10">
@@ -83,3 +88,4 @@ export default function BlogPosts() {
         </main>
     )
 }
+

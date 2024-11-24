@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import Sidebar from '@/app/components/chats/Sidebar'
-import ChatArea from '@/app/components/chats/ChatArea'
-import ChatInput from '@/app/components/chats/ChatInput'
+import Sidebar from '@/app/components/chats/sidebar'
+import ChatArea from '@/app/components/chats/chatArea'
+import ChatInput from '@/app/components/chats/chatInput'
 
 export default function Home() {
   const [sidebarWidth, setSidebarWidth] = useState(300)
