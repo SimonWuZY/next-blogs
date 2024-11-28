@@ -6,8 +6,6 @@ import { Search, Calendar, Smile, Bot, FileText } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import { ReactNode, useRef } from 'react'
 
-
-
 export default function HomePage() {
   const cards = [
     {

@@ -32,7 +32,6 @@ export const LoginModal = React.forwardRef<HTMLDivElement, LoginModalProps>(({ i
             onCancel={onClose}
             footer={null} // 不显示默认的 footer 按钮
             width={425}
-        // ref={ref} // 将 ref 传递给 Modal 组件
         >
             <Form
                 name="login-form"
